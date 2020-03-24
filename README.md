@@ -43,8 +43,8 @@ When two or more units are combined, they form an interface, and when two or mor
 <dl>
 <dd>
 
-## Jest is a testing library for JavaScript code.
-**Jest is a JavaScript testing platform built by Facebook.** Although the Jest library is well suited for the React library, it is not limited to that and can test any JavaScript code. Since the testing structure of Jest is already setup, to test a component you simply need to setup your component, setup your expectations for that component, and Jest will do the rest!
+## Jest is a library to test JavaScript code.
+Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an assertion library), Jest runs tests but also is your assertion library which you can use to make sure one thing is equal to other things. Jest can also take snapshots of a component. Additionally, Jest is very fast Although the Jest library is well suited for the React library, it is not limited to that and can test any JavaScript code. Since the testing structure of Jest is already setup, to test a component you simply need to setup your component, setup your expectations for that component, and Jest will do the rest!
 
 </dd>
 </dl>
@@ -54,11 +54,12 @@ When two or more units are combined, they form an interface, and when two or mor
 <br>
 <br>
 
-# 
+# How should you structure a Jest test?
 
 <dl>
 <dd>
 
+## 
 
 
 
