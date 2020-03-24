@@ -59,8 +59,17 @@ Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an ass
 <dl>
 <dd>
 
-## 
+## Think about how the function/component should be tested.
+To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow. For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
 
+## Create a basic table of tests.
+This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below
+
+| **Test Number**   |   **Input**      | **Output**          | **Description**         |
+| ------------------| -----------------------------------| ------------------| --------------------------|
+|   1               |  3                |   true    |   Is divisible by 3, so "fizz"  |
+|   2               |  -1                |   throw error    |   Only works for positive numbers  |
+|   3               |  4                |   false    |   Is NOT divisible by 3 or 5  |
 
 
 </dd>
