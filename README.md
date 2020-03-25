@@ -54,7 +54,7 @@ Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an ass
 <br>
 <br>
 
-# How should you structure a Jest test?
+# How do you think about Jest test structure?
 
 <dl>
 <dd>
@@ -63,7 +63,7 @@ Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an ass
 To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow. For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
 
 ## Create a basic table of tests.
-This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below
+This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
 
 | **Test Number**   |   **Input**      | **Output**      | **Description**         |
 | ------------------| -----------------------------------| ------------------| --------------------------|
