@@ -56,14 +56,14 @@ How to create a Jest test
   * The "it" function takes TWO parameters... a description of the test and the function itself.
   * In the body, you can perform test that can test code, including expected inputs, expected outputs, and actual outputs.
   * At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X".
-  * In Jest, the "expect" function provides "matchers" to check the input: https://jestjs.io/docs/en/using-matchers
+  * In Jest, the "expect" function provides "matchers" like ".toBe" to check the input: https://jestjs.io/docs/en/using-matchers
   * The test function above invokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output.
   * If it matches, the test will pass.
   * If it does not match, then the test will fail.
     ------------------------------------------------------------------
       import leapYear  from './index';                                  //  Import the function/component from index.js.
       
-      it('Put test description here', function() {                      // The "it" function is invoked by Jest and takes two parameters... the describing test and the function itself.
+      it('This is the test description', function() {                   // The "it" function is invoked by Jest and takes two parameters... the describing test and the function itself.
          const input = 1900                                             // tested input (e.g. the year 1900 which is not a leap year).
          const expectedOutput = false;                                  // the expected output from this test is false.
          const actualOutput = leapYear(input)                           // the actual output is the leapYear function wth the input of 1900 passed to it.
@@ -71,16 +71,10 @@ How to create a Jest test
       });
     ------------------------------------------------------------------
 
+5. Run test!
 
 
 
+  ------------------------------------------------------------------
+  ------------------------------------------------------------------
 
-  ---------------------------------------------------------------------
-  import leapYear  from './index';                                                   
-
-  it('should NOT be a leap year if divisible by 100, not 400', function() {         
-    const input = 1900;
-    const expectedOutput = false; 
-    expect(leapYear(input)).toBe(expectedOutput);
-  });
-  ---------------------------------------------------------------------
