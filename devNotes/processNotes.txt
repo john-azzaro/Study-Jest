@@ -28,6 +28,7 @@ How to create a Jest test
   --------------------------------------------
 
 2. Create a test file for the test code.
+  * Note here that Jest will automatically look for files with ".test.js" or ".spec.js" and run those files.
   --------------------------------------------
     src   >   myProgramFile  >  index.test.js 
                                 ______________
