@@ -72,9 +72,30 @@ How to create a Jest test
     ------------------------------------------------------------------
 
 5. Run test!
-
-
-
   ------------------------------------------------------------------
+    FAIL src/leapyearprogram/index.test.js
+      × should NOT be a leap year if divisible by 100, not 400 (6ms)
+
+      ● should NOT be a leap year if divisible by 100, not 400
+
+        expect(received).toBe(expected) // Object.is equality
+
+        Expected: false
+        Received: true
+
+          4 |   const input = 1900;
+          5 |   const expectedOutput = false;
+        > 6 |   expect(leapYear(input)).toBe(expectedOutput);
+            |                           ^
+          7 | });
+
+          at Object.<anonymous>.it (src/leapyearprogram/index.test.js:6:27)
+
+    Test Suites: 1 failed, 1 total
+    Tests:       1 failed, 1 total
+    Snapshots:   0 total
+    Time:        1.952s, estimated 2s
+    Ran all test suites related to changed files.
+
   ------------------------------------------------------------------
 
