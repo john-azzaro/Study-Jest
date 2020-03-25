@@ -35,16 +35,27 @@ How to create a Jest test
   --------------------------------------------
 
 3. Add your function/component to index.js:
-  --------------------------------------------------------
-    function leapYear(year) {
-      if(year < 1582) {
+  ------------------------------------------------------------------- 
+    function leapYear(year) {                                          // This function takes a year as its input...
+      if(year < 1582) {                                                // If the year is less than 1582, then it is an error.
         throw new Error('Leap year rules do not work before 1582');
       }
-      const div400 = year % 400 === 0;
+      const div400 = year % 400 === 0;            
       const div100 = year % 100 === 0;
       const div4 = year % 4 === 0;
-      return div400 || (div4 || !div100);
-    }
+      return div400 || (div4 || !div100);                              // if the year is equal to the value of one of the variables, then it is correct.
+    } 
 
-  export default leapYear;
-  --------------------------------------------------------
+  export default leapYear;                                             // remember to export the function/component so it is accessible to other JavaScript modules and test.
+  ------------------------------------------------------------------
+
+4. Create your first test:
+  ---------------------------------------------------------------------
+  import leapYear  from './index';                                                   //  Import the function/component from index.js.
+
+  it('should NOT be a leap year if divisible by 100, not 400', function() {          // The "it" function is invoked by Jest
+    const input = 1900;
+    const expectedOutput = false; 
+    expect(leapYear(input)).toBe(expectedOutput);
+  });
+  ---------------------------------------------------------------------
