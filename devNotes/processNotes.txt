@@ -13,3 +13,24 @@ the case of application development, groups of related steps are combined into "
 post-review. This has proven to be EXTREMELY helpful in learning (i.e. Feynman technique (https://fs.blog/2012/04/feynman-technique/)) and refining 
 workflow so I can improve my process in future projects. It also has come in handy for some tricky bug fixes not only for past projects, but this 
 one as well so I would urge you to consider at least doing a rough summary for your own benefit.
+
+
+
+
+
+How to create a Jest test
+=========================
+
+1. In your src file, create a program file and within that, create a index.js file.
+  --------------------------------------------
+    src    >   myProgramFile  >  index.js
+              _______________    _________
+  --------------------------------------------
+
+2. Create a test file for the test code.
+  --------------------------------------------
+    src   >   myProgramFile  >  index.test.js 
+                                ______________
+  --------------------------------------------
+
+3. 
