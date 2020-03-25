@@ -65,12 +65,12 @@ To figure out how the function/component should be tested, you need to think abo
 ## Create a basic table of tests.
 This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
 
-| **Test Number**   |   **Input**      | **Output**      | **Description**         |
+| **Test**          |   **Input**      | **Output**      | **Description**         |
 | ------------------| -----------------------------------| ------------------| --------------------------|
-|   1               |  'a'             |   false          |   Is a string, must be a number.  |
-|   2               |  3               |   true          |   Is divisible by 3, so "fizz"  |
-|   3               |  -1              |   throw error   |   Only works for positive numbers  |
-|   4               |  4               |   false         |   Is NOT divisible by 3 or 5  |
+|   1               |  'a'             |   false         |   Is a string, must be a number.  |
+|   2               |  3               |   true          |   Is divisible by 3 and will return "fizz".  |
+|   3               |  -1              |   throw error   |   Only works for positive numbers.  |
+|   4               |  4               |   false         |   Is NOT divisible by 3 or 5.  |
 
 
 </dd>
