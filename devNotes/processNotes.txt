@@ -74,14 +74,14 @@ How to create a Jest test
 5. Run test!
   ------------------------------------------------------------------
     FAIL src/leapyearprogram/index.test.js
-      × should NOT be a leap year if divisible by 100, not 400 (6ms)
+      × should NOT be a leap year if divisible by 100, not 400 (6ms)              // name of the test (this is why you have a good, unambiguous descriptive description). Also good for id if multiple tests.
 
       ● should NOT be a leap year if divisible by 100, not 400
 
-        expect(received).toBe(expected) // Object.is equality
+        expect(received).toBe(expected) // Object.is equality                     // the test itself, comparing two 2 values for equality.
 
-        Expected: false
-        Received: true
+        Expected: false                                                           // We expected the test to be false...
+        Received: true                                                            // ... but it returned true.
 
           4 |   const input = 1900;
           5 |   const expectedOutput = false;
