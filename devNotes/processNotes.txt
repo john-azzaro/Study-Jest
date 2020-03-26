@@ -71,6 +71,16 @@ How to create a Jest test
       });
     ------------------------------------------------------------------
 
+  * The method of testing is up to you as you can simplify the tests depending on what your preference is. 
+  * For example, you could write short "it" functions for each and every test you want.
+  ---------------------------------------------------------------------------------------
+
+  ---------------------------------------------------------------------------------------
+
+
+
+
+
 5. Run test!
   * Note that when you run the tests, it will continue to watch for changes, so you can chnage or modify your code 
     and the tests will automatically run again.
@@ -112,8 +122,8 @@ When you correct this error, the test should pass!
     PASS src/leapyearprogram/index.test.js
       √ should NOT be a leap year if divisible by 100, not 400 (4ms)
 
-    Test Suites: 1 passed, 1 total
-    Tests:       1 passed, 1 total
+    Test Suites: 1 passed, 1 total                                            // One test suit (index.test.js)
+    Tests:       1 passed, 1 total                                            // One test.
     Snapshots:   0 total
     Time:        1.932s, estimated 2s
     Ran all test suites related to changed files.
@@ -142,3 +152,17 @@ How do you create more than one test?
       expect(actualOutput).toBe(expectedOutput);
     });
   ---------------------------------------------------------------------------------------
+
+  And when you see the test output, you will see a second test pass.
+  ----------------------------------------------------------------------------------------
+    PASS src/leapyearprogram/index.test.js
+      √ should NOT be a leap year if divisible by 100, not 400 (3ms)
+      √ should be a leap year if divisible by 4, not 100
+
+    Test Suites: 1 passed, 1 total                                                          // One test suit (index.test.js)
+    Tests:       2 passed, 2 total                                                          // Two tests.
+    Snapshots:   0 total
+    Time:        2.496s
+    Ran all test suites related to changed files.
+
+  ----------------------------------------------------------------------------------------
