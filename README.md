@@ -44,7 +44,7 @@ When two or more units are combined, they form an interface, and when two or mor
 <dd>
 
 ## Jest is a library to test JavaScript code.
-Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an assertion library), Jest runs tests but also is your assertion library which you can use to make sure one thing is equal to other things. Jest can also take snapshots of a component. Additionally, Jest is very fast Although the Jest library is well suited for the React library, it is not limited to that and can test any JavaScript code. Since the testing structure of Jest is already setup, to test a component you simply need to setup your component, setup your expectations for that component, and Jest will do the rest!
+**Jest is a powerful JavaScript testing framework installed and configured on create-react-app.** Unlike Mocha (a test runner), chai (an assertion library), Jest runs tests but also is your assertion library which you can use to make sure one thing is equal to other things. Jest can also take snapshots of a component. Additionally, Jest is very fast Although the Jest library is well suited for the React library, it is not limited to that and can test any JavaScript code. Since the testing structure of Jest is already setup, to test a component you simply need to setup your component, setup your expectations for that component, and Jest will do the rest!
 
 </dd>
 </dl>
@@ -54,7 +54,7 @@ Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an ass
 <br>
 <br>
 
-# How do you think about Jest test structure?
+# What are some fundamental things to consider about Jest?
 
 <dl>
 <dd>
@@ -62,7 +62,7 @@ Jest is a JavaScript testing library. Unlike Mocha (a test runner), chai (an ass
 ## Think about how the function/component should be tested.
 To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow. For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
 
-## Create a basic table of tests.
+## Create a basic table of tests before you start coding.
 This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
 
 | **Test**          |   **Input**      | **Output**      | **Description**         |
@@ -71,6 +71,14 @@ This basic table of tests will have test inputs, expected outputs, and a descrip
 |   2               |  3               |   true          |   Is divisible by 3 and will return "fizz".  |
 |   3               |  -1              |   throw error   |   Only works for positive numbers.  |
 |   4               |  4               |   false         |   Is NOT divisible by 3 or 5.  |
+
+## Test Code is seperate from the actual code source.
+When you create tests, you create seperate ```.test.js``` files from the source file. For example, is you had a function called "addItUp", in order to test that function you would need to create a seperate file called ```addItUp.text.js``` and then import content of the file (e.g. ```import addItUp  from './addItUp';```).
+
+## All scaffolding for running code is provided by Jest.
+When you run ```create-react-app```, everything that you need to utilize Jest testing is including and fully functioning. In test files, Jest will see ```it``` functions and know that it can invoke it.
+
+## 
 
 
 </dd>

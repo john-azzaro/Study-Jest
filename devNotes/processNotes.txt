@@ -73,8 +73,10 @@ How to create a Jest test
 
   * The method of testing is up to you as you can simplify the tests depending on what your preference is. 
   * For example, you could write short "it" functions for each and every test you want.
+  * Each test case is defined.
+  * Note that the last one that throws an error requires a different expect matcher, specifically the ".toThrow"
   ---------------------------------------------------------------------------------------
-      it('should NOT be a leap year if divisible by 100, not 400', function() {
+      it('should NOT be a leap year if divisible by 100, not 400', function() {                    //
         expect(leapYear(1900)).toBe(false);
       });
 
