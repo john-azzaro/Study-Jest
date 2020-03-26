@@ -119,3 +119,26 @@ When you correct this error, the test should pass!
     Ran all test suites related to changed files.
 
     ----------------------------------------------------------------------
+
+
+
+
+How do you create more than one test?
+======================================
+  * To add another test case, you simply create another "it" function, a description of the test and the function itself.. basically a rehash of step 4 above.
+  ---------------------------------------------------------------------------------------
+    import leapYear  from './index';
+
+    it('should NOT be a leap year if divisible by 100, not 400', function() {            // First test
+      const input = 1900;
+      const expectedOutput = false; 
+      expect(leapYear(input)).toBe(expectedOutput);
+    });
+
+    it('should be a leap year if divisible by 4, not 100', function() {                    // Second test
+      const input = 1984;
+      const expectedOutput = true;
+      const actualOutput = leapYear(input);
+      expect(actualOutput).toBe(expectedOutput);
+    });
+  ---------------------------------------------------------------------------------------
