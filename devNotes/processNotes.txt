@@ -72,6 +72,8 @@ How to create a Jest test
     ------------------------------------------------------------------
 
 5. Run test!
+  * Note that when you run the tests, it will continue to watch for changes, so you can chnage or modify your code 
+    and the tests will automatically run again.
   ------------------------------------------------------------------
     FAIL src/leapyearprogram/index.test.js
       × should NOT be a leap year if divisible by 100, not 400 (6ms)              // name of the test (this is why you have a good, unambiguous descriptive description). Also good for id if multiple tests.
@@ -80,18 +82,18 @@ How to create a Jest test
 
         expect(received).toBe(expected) // Object.is equality                     // the test itself, comparing two 2 values for equality.
 
-        Expected: false                                                           // We expected the test to be false...
-        Received: true                                                            // ... but it returned true.
+        Expected: false                                                           // We expect the value of the test to be FALSE...
+        Received: true                                                            // ... but the value returns TRUE.
 
           4 |   const input = 1900;
           5 |   const expectedOutput = false;
-        > 6 |   expect(leapYear(input)).toBe(expectedOutput);
+        > 6 |   expect(leapYear(input)).toBe(expectedOutput);                     // And the point of failure for the test occurs here.
             |                           ^
           7 | });
 
           at Object.<anonymous>.it (src/leapyearprogram/index.test.js:6:27)
 
-    Test Suites: 1 failed, 1 total
+    Test Suites: 1 failed, 1 total                                                 // Lastly, a general summary of the tests which pass, fail, etc.
     Tests:       1 failed, 1 total
     Snapshots:   0 total
     Time:        1.952s, estimated 2s
@@ -99,3 +101,21 @@ How to create a Jest test
 
   ------------------------------------------------------------------
 
+  In this case, the error occured because we used an "or" operator instead of a "and" operator
+    -----------------------------------------------------------------
+       return div400 || (div4 || !div100);                             // WRONG
+       return div400 || (div4 && !div100);                             // CORRECT
+    -----------------------------------------------------------------
+
+When you correct this error, the test should pass!
+    ----------------------------------------------------------------------
+    PASS src/leapyearprogram/index.test.js
+      √ should NOT be a leap year if divisible by 100, not 400 (4ms)
+
+    Test Suites: 1 passed, 1 total
+    Tests:       1 passed, 1 total
+    Snapshots:   0 total
+    Time:        1.932s, estimated 2s
+    Ran all test suites related to changed files.
+
+    ----------------------------------------------------------------------
