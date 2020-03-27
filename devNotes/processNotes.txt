@@ -202,3 +202,11 @@ How do you create more than one test?
     * When A react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment.
     * Since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI.
   * React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
+
+  ---
+  Objectives -- 
+      * first test that ensures component renders to beging with (useful as a base to build on when your component heirarchy grows such as when a nested component breaks).
+         * Testing deeply nested components is refered to as a "smoke test".
+      * Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all.
+        * If you did not intend to change the UI
+      * 
