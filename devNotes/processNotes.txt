@@ -198,4 +198,7 @@ How do you create more than one test?
   * A React component represents a single unit of code built to accomplish a single task.
   * Testing components ensures that they behave as expected.
   * Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions.
-  * 
+  * However, React components differe in a few ways:
+    * When A react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment.
+    * Since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI.
+  * React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
