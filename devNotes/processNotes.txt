@@ -304,3 +304,26 @@ How do you create more than one test?
       <Messages name="messages" unread={10}/>
     -------------------------------------------------------
           
+  * For the purposes of this test, it will be a simple stateless component that displays the values of 2 props.
+  * However, if the number of unread notifications is zero, the badge will not be displayed.
+  * To do this, you first need to check to see if the uread prop contains non-zero value.
+    * If it does, then div will render the value.
+    * if it does not, then render nothing.
+  
+    The component code will look like this:
+    --------------------------------------------------------------
+    import React from 'react';
+    import './Messages.css';
+
+    export default function Messages(props) {
+      const badge = props.unread 
+        ? <div className="unread_count">{props.unread}</div> 
+        : null;
+      return (
+        <div className="messages">
+          {props.name} 
+          {badge}
+        </div>  
+      );
+    }
+    --------------------------------------------------------------
