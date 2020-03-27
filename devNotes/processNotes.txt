@@ -290,3 +290,17 @@ How do you create more than one test?
     Ran all test suites related to changed files.
 
   ----------------------------------------------------------------------------
+
+
+
+  What is Snapshot testing
+  ========================
+  * Another simple test is a snapshot test.
+  * Snapshots are saved versions of the UI rendered by the React component.
+
+  In this example, we'll create smoke and snapshot tests.
+  * The component will be invoked via 
+    -------------------------------------------------------
+      <Messages name="messages" unread={10}/>
+    -------------------------------------------------------
+          
