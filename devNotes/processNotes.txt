@@ -312,18 +312,40 @@ How do you create more than one test?
   
     The component code will look like this:
     --------------------------------------------------------------
-    import React from 'react';
-    import './Messages.css';
+      import React from 'react';
+      import './Messages.css';
 
-    export default function Messages(props) {
-      const badge = props.unread 
-        ? <div className="unread_count">{props.unread}</div> 
-        : null;
-      return (
-        <div className="messages">
-          {props.name} 
-          {badge}
-        </div>  
-      );
-    }
+      export default function Messages(props) {
+        const badge = props.unread 
+          ? <div className="unread_count">{props.unread}</div> 
+          : null;
+        return (
+          <div className="messages">
+            {props.name} 
+            {badge}
+          </div>  
+        );
+      }
+
     --------------------------------------------------------------
+
+    And the App should look like this:
+    -------------------------------------------------------------------
+      import React, { Component } from 'react';
+      import './App.css';
+      import Messages from './Messages';
+
+      class App extends Component {
+        render() {
+          return (
+            <div className="App">
+              <h1>Snapshot and Smoke Test!</h1>
+              <Messages name="Messages" unread={0}/>
+              <Messages name="Notifications" unread={10}/>
+            </div>
+          );
+        }
+      }
+
+      export default App;
+    -------------------------------------------------------------------
