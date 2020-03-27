@@ -188,3 +188,14 @@ How do you create more than one test?
     Ran all test suites related to changed files.
 
   ----------------------------------------------------------------------------------------
+
+
+
+
+
+  How do you test React Components with Jest?
+  ==========================================
+  * A React component represents a single unit of code built to accomplish a single task.
+  * Testing components ensures that they behave as expected.
+  * Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions.
+  * 

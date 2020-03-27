@@ -54,7 +54,7 @@ When two or more units are combined, they form an interface, and when two or mor
 <br>
 <br>
 
-# What are some fundamental things to consider about Jest?
+# What should you consider before writing Jest tests?
 
 <dl>
 <dd>
@@ -78,7 +78,7 @@ When you create tests, you create seperate ```.test.js``` files from the source 
 ## All scaffolding for running code is provided by Jest.
 When you run ```create-react-app```, everything that you need to utilize Jest testing is including and fully functioning. In test files, Jest will see ```it``` functions and know that it can invoke it.
 
-## 
+
 
 
 </dd>
