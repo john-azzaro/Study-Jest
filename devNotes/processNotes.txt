@@ -209,4 +209,25 @@ How do you create more than one test?
          * Testing deeply nested components is refered to as a "smoke test".
       * Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all.
         * If you did not intend to change the UI
-      * 
+  
+
+
+  How do you create a smoke test?
+  ===============================
+  1. First, look for the App.test.js. 
+  * This is the test file for App.js.
+    -------------------------------------------------------------------------
+      import React from 'react';                                                 // make React available
+
+      import ReactDOM from 'react-dom';                                          // make the ReactDOM available, necessary for rendering the component
+
+      import App from './App';                                                   // make the App component available
+
+      it('renders without crashing', function() {                                // this is the test case
+        const div = document.createElement('div');                               // first create a DOM element to render the component into
+        ReactDOM.render(<App />, div);                                           // render the component, this is the actual test, if something is wrong it will fail here
+
+        
+        ReactDOM.unmountComponentAtNode(div);                                    // clean up code
+      });
+    -------------------------------------------------------------------------
