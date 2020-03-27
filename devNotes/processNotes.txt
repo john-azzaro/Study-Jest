@@ -231,3 +231,62 @@ How do you create more than one test?
         ReactDOM.unmountComponentAtNode(div);                                    // clean up code
       });
     -------------------------------------------------------------------------
+
+  When you run the test for the default app, it will look like this:
+    * Note that when you run test scripts, React will start a "watcher" that performs ALL tests it finds and
+      then waits for you to alter a file and repeat the test if you leave the testing open.
+    --------------------------------------------------------------------------
+    PASS src/App.test.js
+      √ renders learn react link (29ms)
+
+    Test Suites: 1 passed, 1 total
+    Tests:       1 passed, 1 total
+    Snapshots:   0 total
+    Time:        2.799s
+    Ran all test suites related to changed files.
+    --------------------------------------------------------------------------
+
+  If you edit the App.js file such that you intentionally create an error, you will get a "smoke test".
+  ----------------------------------------------------------------------------
+    import React, { Component } from 'react';
+    import './App.css';
+
+    class App extends Component {
+      render() {
+        return (
+          <div className="App">
+            <h1>YOUR APPLICATION NAME!</h1>
+            <div>Hello!</div>
+          </div>                                                                // this div is not wrapped in a common element.
+          <div>This does not belong here</div>
+        );
+      }
+    }
+
+    export default App;
+  ----------------------------------------------------------------------------
+
+  In your console, you will see the "smoke test" in action.
+  ----------------------------------------------------------------------------
+    FAIL src/App.test.js
+      ● Test suite failed to run
+
+        SyntaxError: C:\Users\Admin\... Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (11:6)
+
+          9 |         <div>Hello!</div>
+          10 |       </div>
+        > 11 |       <div>This does not belong here</div>
+            |       ^
+          12 |     );
+          13 |   }
+          14 | }
+
+          at Object._raise (node_modules/@babel/parser/src/parser/location.js:241:45)
+
+    Test Suites: 1 failed, 1 total
+    Tests:       0 total
+    Snapshots:   0 total
+    Time:        3.065s
+    Ran all test suites related to changed files.
+
+  ----------------------------------------------------------------------------
