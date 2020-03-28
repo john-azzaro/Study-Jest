@@ -382,7 +382,19 @@ How do you create more than one test?
   --------------------------------------------------------------
 
 2. Add test case.
-  * Note here that if you want to compare snapshots, you need to use the ".toMatchSnapshot" method.
+  * A few things happen here that you need to keep in mind.
+    ----------------------------------------------------------
+      const myVar = renderer.create(<MyComponent />).toJSON();
+      expect(myVar).toMatchSnapshot();
+    ----------------------------------------------------------
+
+  * First, make sure that this test is saved as a constant.
+  * Second, call "renderer" as you imported that to your file to perform snapshot tests.
+  * Third, use the "create" method that takes the component to be rendered and performs a render on it.
+  * Fourth, add the "toJSON" method to create a JSON file.
+  * Fifth, when you "expect" the variable with your snapshot code, add the ".toMatchSnapshot" to perform the snapshot comparison.
+
+   For the example we have now, it will look like this:
   ---------------------------------------------------------------------
     it('renders the UI as expected', function() {
     const tree = renderer
