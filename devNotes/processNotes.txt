@@ -403,3 +403,26 @@ How do you create more than one test?
     expect(tree).toMatchSnapshot();                                     // And compare the component to a saved version of the component.
     });
   ---------------------------------------------------------------------
+
+
+  3. Run the test:
+    -------------------------------------------------------------------
+      PASS src/Messages.test.js
+        √ renders without crashing (14ms)
+        √ renders the UI as expected (11ms)
+
+      › 1 snapshot written.                                              // See that snapshot was successfully taken.
+      Snapshot Summary
+      › 1 snapshot written from 1 test suite.                             
+
+      Test Suites: 1 passed, 1 total
+      Tests:       2 passed, 2 total
+      Snapshots:   1 written, 1 total
+      Time:        2.682s
+      Ran all test suites related to changed files.
+
+    -------------------------------------------------------------------
+
+
+  4. Check your (new) snapshots folder.
+    * When you first run your snapshot test, you will see that a new "__snapshots__" folder is created in your "src" folder.
