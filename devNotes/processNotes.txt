@@ -530,3 +530,27 @@ How do you implement a test suite?
         // all my test cases here
       });
     ----------------------------------------------------------------
+
+And in the output you shoudl see something like this:
+  --------------------------------------------------------------------
+    PASS src/Messages.test.js
+      Messages component                                                      // Test suite
+        √ renders without crashing (17ms)
+        √ renders the UI as expected (12ms)
+        √ renders the UI as expected with no unreads (1ms)
+
+      › 2 snapshots obsolete.
+        • renders the UI as expected 1
+        • renders the UI as expected with no unreads 1
+      Snapshot Summary
+      › 2 snapshots obsolete from 1 test suite. To remove them all, press `u`.
+        ↳ src/Messages.test.js
+            • renders the UI as expected 1
+            • renders the UI as expected with no unreads 1
+
+      Test Suites: 1 passed, 1 total
+      Tests:       3 passed, 3 total
+      Snapshots:   2 obsolete, 2 passed, 2 total
+      Time:        2.07s
+      Ran all test suites related to changed files.
+  --------------------------------------------------------------------
