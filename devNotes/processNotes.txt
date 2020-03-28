@@ -426,3 +426,29 @@ How do you create more than one test?
 
   4. Check your (new) snapshots folder.
     * When you first run your snapshot test, you will see that a new "__snapshots__" folder is created in your "src" folder.
+    -------------------------------------------------------------------
+      src  >  __snapshots__
+    -------------------------------------------------------------------
+
+    And inside your "__snapshots__" folder, you will see a new file called "Messages.test.js.snap".
+    * This is the snapshot when you ran the test.
+    * This file is then committed to the repository so all your other team members can see it.
+    ------------------------------------------------------------------
+      exports[`renders the UI as expected 1`] = `
+      <div
+        className="messages"
+      >
+        Messages
+        <div
+          className="unread_count"
+        >
+          4
+        </div>
+      </div>
+      `;
+    ------------------------------------------------------------------
+
+
+
+    How do you Update a snapshot?
+    =============================
