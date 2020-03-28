@@ -212,6 +212,10 @@ How do you create more than one test?
   
 
 
+
+
+
+
   How do you create a smoke test?
   ===============================
   1. First, look for the App.test.js. 
@@ -293,6 +297,10 @@ How do you create more than one test?
 
 
 
+
+
+
+
   What is Snapshot testing
   ========================
   * Another simple test is a snapshot test.
@@ -308,6 +316,7 @@ How do you create more than one test?
     ----------------------------------------------
       npm install react-test-renderer -D
     ----------------------------------------------
+
 
 
 
@@ -364,3 +373,21 @@ How do you create more than one test?
       export default App;
     -------------------------------------------------------------------
 
+
+
+======SETUP FOR SNAPSHOT=============
+1. To add snapshots to your test file, import the renderer package to your file.
+  --------------------------------------------------------------
+    import renderer from 'react-test-renderer';
+  --------------------------------------------------------------
+
+2. Add test case.
+  * Note here that if you want to compare snapshots, you need to use the ".toMatchSnapshot" method.
+  ---------------------------------------------------------------------
+    it('renders the UI as expected', function() {
+    const tree = renderer
+      .create(<Messages name="Messages" unread={4}/>)                   // Renders the component...
+      .toJSON();                                                        // ... and creates a human-readable JSON file.
+    expect(tree).toMatchSnapshot();                                     // And compare the component to a saved version of the component.
+    });
+  ---------------------------------------------------------------------
