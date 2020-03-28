@@ -482,7 +482,7 @@ How do you create more than one test?
           >
             Messages
             <div
-        -     className="unread_count"
+        -     className="unread_count"                                                                // the "diff" comparing the snapshot to the actually rendered component.
         +     className="unread_count badge"
             >
               4
@@ -508,3 +508,12 @@ How do you create more than one test?
     Ran all test suites related to changed files.
 
   ------------------------------------------------------------------------------
+
+
+IF the change was DELIBERATE, press "u" (however this does not seem to work in git bash since there is no interactive shell).
+
+
+
+What is a Test suite?
+=====================
+* A test suite helps organize 
