@@ -516,4 +516,17 @@ IF the change was DELIBERATE, press "u" (however this does not seem to work in g
 
 What is a Test suite?
 =====================
-* A test suite helps organize 
+* A test suite helps organize the tens, hundreds, or even thousands of tests you write for your program.
+* Output can become difficult to read for many tests, so you need to organize them into suites.
+* Each suite focuses on a single component or functional area. In other words, all test cases in a single suite are related.
+
+
+How do you implement a test suite?
+==================================
+* To implement a test suite, you need to wrap your tests (i.e. all the "it"s) in a "describe" function.
+
+    ----------------------------------------------------------------
+      describe('My component', () => {
+        // all my test cases here
+      });
+    ----------------------------------------------------------------
