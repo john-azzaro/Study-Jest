@@ -79,6 +79,19 @@ When you create tests, you create seperate ```.test.js``` files from the source 
 When you run ```create-react-app```, everything that you need to utilize Jest testing is including and fully functioning. In test files, Jest will see ```it``` functions and know that it can invoke it.
 
 
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# How do you create a Jest test?
+
+<dl>
+<dd>
+
 
 
 </dd>
@@ -88,3 +101,49 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <br>
 <br>
 <br>
+
+# How do you create more than one Jest test?
+
+<dl>
+<dd>
+
+
+
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# How do you test React Components with Jest?
+
+<dl>
+<dd>
+
+
+
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# How do you create a smoke test?
+
+<dl>
+<dd>
+
+
+
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
