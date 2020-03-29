@@ -129,18 +129,28 @@ Before you write your tests, it's best practice to first create a test suite to 
 The test functioninvokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output. First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
 ```JavaScript
   describe('Divisible by 5', function() {
-    it('Should NOT possible to divide 24 by 5', function() {    // The "it" function takes two parameters, the description and the function.
-      const input = 24                                          // Tested input value (the inserted parameter for the test).
-      const expectedOutput = false;                             // The expected output from this test (in this case false).
-      const actualOutput = myFunction(input)                    // The actual output is the tested function wth the input passed to it.
-      expect(actualOutput).toBe(expectedOutput);                // The result of myFunction(25) is expected to be FALSE.
+    it('Should NOT be possible to divide 24 by 5', function() {    // The "it" function takes two parameters, the description and the function.
+      const input = 24                                             // Tested input value (the inserted parameter for the test).
+      const expectedOutput = false;                                // The expected output from this test (in this case false).
+      const actualOutput = myFunction(input)                       // The actual output is the tested function wth the input passed to it.
+      expect(actualOutput).toBe(expectedOutput);                   // The result of myFunction(25) is expected to be FALSE.
     });
   });
 ```
 
-You can even smaller, individual test functions for each and every test if you wish.
-```
-
+You can even have smaller individual test functions for each and every test if you wish.
+```JavaScript
+  describe('Divisible by 5', function() {
+    it('Should NOT be possible to divide 4 by 5', function() {    
+      expect(4).toBe(false);
+    });
+    it('Should be possible to divide 5 by 5', function() {    
+      expect(5).toBe(true);
+    });
+    it('Should Not be possible to divide 5 by 5', function() {    
+      expect(6).toBe(false);
+    });
+  });
 ```
 
 
