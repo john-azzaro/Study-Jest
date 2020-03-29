@@ -7,10 +7,12 @@ Here are a few questions from the study to explore:
 * [What is testing?](#What-is-testing)
 * [What is Jest?](#What-is-Jest)
 * [What should you consider before writing Jest tests?](#What-should-you-consider-before-writing-Jest-tests)
-* [How do you create a Jest test?](#How do you create a Jest test?)
-* [How do you create more than one Jest test?](#How do you create more than one Jest test?)
-* [How do you test React Components with Jest?](#How do you test React Components with Jest?)
-* [](#)
+* [How do you create a Jest test?](#How-do-you-create-a-Jest-test)
+* [How do you create more than one Jest test?](#How-do-you-create-more-than-one-Jest-test)
+* [How do you test React Components with Jest?](#How-do-you-test-React-Components-with-Jest)
+* [How do you create a smoke test?](#How-do-you-create-a-smoke-test)
+* [What is Snapshot testing?](#What-is-Snapshot-testing)
+* [How do you implement a test suite?](#How-do-you-implement-a-test-suite)
 * [](#)
 
 <br>
