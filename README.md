@@ -66,6 +66,8 @@ When two or more units are combined, they form an interface, and when two or mor
 ## Think about how the function/component should be tested.
 To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow. For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
 
+<br>
+
 ## Create a basic table of tests before you start coding.
 This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
 
@@ -76,8 +78,12 @@ This basic table of tests will have test inputs, expected outputs, and a descrip
 |   3               |  -1              |   throw error   |   Only works for positive numbers.  |
 |   4               |  4               |   false         |   Is NOT divisible by 3 or 5.  |
 
+<br>
+
 ## Test Code is seperate from the actual code source.
 When you create tests, you create seperate ```.test.js``` files from the source file. For example, is you had a function called "addItUp", in order to test that function you would need to create a seperate file called ```addItUp.text.js``` and then import content of the file (e.g. ```import addItUp  from './addItUp';```).
+
+<br>
 
 ## All scaffolding for running code is provided by Jest.
 When you run ```create-react-app```, everything that you need to utilize Jest testing is including and fully functioning. In test files, Jest will see ```it``` functions and know that it can invoke it.
@@ -97,7 +103,7 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <dd>
 
 ## Have a file to test.
- 
+
 
 
 ## Create a .test.js file.
@@ -107,6 +113,8 @@ To create a test, you first need to create a ```.test.js``` file. Ideally, you w
   src  >  myProgramFolder  >  index.spec.js                      // uses "spec".
 ```
 
+<br>
+
 ## Create a test suite for your test.
 Before you write your tests, it's best practice to first create a test suite to wrap around all of your associated tests. A test suite helps organize the tens, hundreds, or even thousands of tests you write for your program. Because of this, output can become difficult to read for many tests, so you need to organize them into suites. Each suite focuses on a single component or functional area. In other words, all test cases in a single suite are related.
 ```JavaScript
@@ -114,6 +122,8 @@ Before you write your tests, it's best practice to first create a test suite to 
     // test cases go in here.
   });
 ```
+
+<br>
 
 ## Add a test function.
 The test functioninvokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output. First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
@@ -126,14 +136,12 @@ The test functioninvokes the function to be tested with the input for for which 
       expect(actualOutput).toBe(expectedOutput);                // The result of myFunction(25) is expected to be FALSE.
     });
   });
-  
-
 ```
 
 You can even smaller, individual test functions for each and every test if you wish.
 ```
 
-
+```
 
 
 </dd>
