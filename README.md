@@ -7,7 +7,7 @@ Here are a few questions from the study to explore:
 * [What is testing?](#What-is-testing)
 * [What is Jest?](#What-is-Jest)
 * [What should you consider before writing Jest tests?](#What-should-you-consider-before-writing-Jest-tests)
-* [How do you create a Jest test?](#How-do-you-create-a-Jest-test)
+* [How do you create a Basic Jest test?](#How-do-you-create-a-Basic-Jest-test)
 * [How do you create more than one Jest test?](#How-do-you-create-more-than-one-Jest-test)
 * [How do you test React Components with Jest?](#How-do-you-test-React-Components-with-Jest)
 * [How do you create a smoke test?](#How-do-you-create-a-smoke-test)
@@ -91,7 +91,7 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <br>
 <br>
 
-# How do you create a Jest test?
+# How do you create a Basic Jest test?
 
 <dl>
 <dd>
@@ -99,16 +99,19 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 ## Create a .test.js file.
 To create a test, you first need to create a ```.test.js``` file. Ideally, you want to keep your test file in the same location as the file you wish to test. When you run your test, Jest (which comes configured when you run ```create-react-app```) will automatically look for files with ".test.js" or ".spec.js" and run them.
 ```
-  src  >  myProgramFolder  >  index.test.js
-
-        --or--
-
-  src  >  myProgramFolder  >  index.spec.js
+  src  >  myProgramFolder  >  index.test.js                      // uses "test".
+  src  >  myProgramFolder  >  index.spec.js                      // uses "spec".
 ```
 
+## Create a test suite for your test.
+Before you write your tests, it's best practice to first create a test suite to wrap around all of your associated tests. A test suite helps organize the tens, hundreds, or even thousands of tests you write for your program. Because of this, output can become difficult to read for many tests, so you need to organize them into suites. Each suite focuses on a single component or functional area. In other words, all test cases in a single suite are related.
+```JavaScript
+  describe('My component', function() {
+    // test cases go in here.
+  });
 
 
-
+```
 
 
 
