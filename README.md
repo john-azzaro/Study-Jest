@@ -157,7 +157,46 @@ You can even have smaller individual test functions for each and every test if y
 <br>
 
 ## Run your test via npm test.
-When you are ready to test your code, you simply need to run ```npm test```. If the test FAILS, then that means that there is an issue in your code that you need to address in order pass the test. For example, suppose 
+When you are ready to test your code, you simply need to run ```npm test```. If the test FAILS, then that means that there is an issue in your code that you need to address in order pass the test. Note that when you run the tests, it will continue to watch for changes, so you can chnage or modify your code and the tests will automatically run again.
+```
+    FAIL src/isDivisible/index.test.js                                            // "FAIL" notfication for failed test file.
+      × Should NOT be possible to divide 24 by 5 (6ms)                            // Name of the test that failed.
+
+      ● Should NOT be possible to divide 24 by 5                                  // Name of test.
+
+        expect(received).toBe(expected) // Object.is equality                     // The test expected comparing two 2 values for equality.
+
+        Expected: false                                                           // The expected value of the test should be FALSE.
+        Received: true                                                            // HOWEVER, the value returns TRUE (so test fails).
+
+          4 |   const input = 24;
+          5 |   const expectedOutput = false;
+        > 6 |   expect(leapYear(input)).toBe(expectedOutput);                     // The point of failure for the test.
+            |                           ^
+          7 | });
+
+          at Object.<anonymous>.it (src/isDivisible/index.test.js:6:27)
+
+    Test Suites: 1 failed, 1 total                                                // Summary of the tests which pass, fail, etc.
+    Tests:       1 failed, 1 total
+    Snapshots:   0 total
+    Time:        1.952s, estimated 2s
+    Ran all test suites related to changed files.
+```
+
+If the test passes (or you fix the issue that caused to test to fail), you will get a passing test.
+```
+    PASS src/isDivisible/index.test.js                                            // "PASS" notfication for passsing test file.       
+      √ Should NOT be possible to divide 24 by 5 (4ms)
+
+    Test Suites: 1 passed, 1 total                                                
+    Tests:       1 passed, 1 total                                          
+    Snapshots:   0 total
+    Time:        1.932s, estimated 2s
+    Ran all test suites related to changed files.
+```
+
+
 
 
 
