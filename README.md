@@ -8,7 +8,6 @@ Here are a few questions from the study to explore:
 * [What is Jest?](#What-is-Jest)
 * [What should you consider before writing Jest tests?](#What-should-you-consider-before-writing-Jest-tests)
 * [How do you create a Basic Jest test?](#How-do-you-create-a-Basic-Jest-test)
-* [How do you create more than one Jest test?](#How-do-you-create-more-than-one-Jest-test)
 * [How do you test React Components with Jest?](#How-do-you-test-React-Components-with-Jest)
 * [How do you create a smoke test?](#How-do-you-create-a-smoke-test)
 * [What is Snapshot testing?](#What-is-Snapshot-testing)
@@ -117,7 +116,7 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <br>
 
 ## Create a test suite for your test.
-Before you write your tests, it's best practice to first create a test suite to wrap around all of your associated tests. A test suite helps organize the tens, hundreds, or even thousands of tests you write for your program. Because of this, output can become difficult to read for many tests, so you need to organize them into suites. Each suite focuses on a single component or functional area. In other words, all test cases in a single suite are related.
+**A test suite helps organize the tens, hundreds, or even thousands of tests you write for your program.** Before you write your tests, it's best practice to first create a test suite to wrap around all of your associated tests. Because of this, output can become difficult to read for many tests, so you need to organize them into suites. Each suite focuses on a single component or functional area. In other words, all test cases in a single suite are related.
 ```JavaScript
   describe('Divisible by 5', function() {
     // test cases go in here.
@@ -127,7 +126,7 @@ Before you write your tests, it's best practice to first create a test suite to 
 <br>
 
 ## Add a test function with expectations and matchers.
-The test function invokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output. First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
+**The test function invokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output.** First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
 ```JavaScript
   describe('Divisible by 5', function() {
     it('Should NOT be possible to divide 24 by 5', function() {                   // The "it" function takes two parameters, the description and the function.
@@ -138,8 +137,8 @@ The test function invokes the function to be tested with the input for for which
     });
   });
 ```
-
-You can even have smaller individual test functions for each and every test if you wish.
+ 
+**You can add mutliple tests to your test suite.** This can be in the form of multiple individual test functions for each and every test or other tests grouped in seperate test suites.
 ```JavaScript
   describe('Divisible by 5', function() {
     it('Should NOT be possible to divide 4 by 5', function() {     
@@ -157,7 +156,7 @@ You can even have smaller individual test functions for each and every test if y
 <br>
 
 ## Run your test via npm test.
-When you are ready to test your code, you simply need to run ```npm test```. If the test FAILS, then that means that there is an issue in your code that you need to address in order pass the test. Note that when you run the tests, it will continue to watch for changes, so you can chnage or modify your code and the tests will automatically run again.
+**When you are ready to test your code, you simply need to run ```npm test```.** If the test FAILS, then that means that there is an issue in your code that you need to address in order pass the test. Note that when you run the tests, it will continue to watch for changes, so you can chnage or modify your code and the tests will automatically run again.
 ```
     FAIL src/isDivisible/index.test.js                                            // "FAIL" notfication for failed test file.
       × Should NOT be possible to divide 24 by 5 (6ms)                            // Name of the test that failed.
@@ -189,30 +188,12 @@ If the test passes (or you fix the issue that caused to test to fail), you will 
     PASS src/isDivisible/index.test.js                                            // "PASS" notfication for passsing test file.       
       √ Should NOT be possible to divide 24 by 5 (4ms)
 
-    Test Suites: 1 passed, 1 total                                                
-    Tests:       1 passed, 1 total                                          
+    Test Suites: 1 passed, 1 total                                                // Number of test suites tested.
+    Tests:       1 passed, 1 total                                                // Number of tests tested.
     Snapshots:   0 total
     Time:        1.932s, estimated 2s
     Ran all test suites related to changed files.
 ```
-
-
-
-
-
-</dd>
-</dl>
-
-<br>
-<br>
-<br>
-<br>
-
-# How do you create more than one Jest test?
-
-<dl>
-<dd>
-
 
 
 </dd>
@@ -228,7 +209,31 @@ If the test passes (or you fix the issue that caused to test to fail), you will 
 <dl>
 <dd>
 
+## 
 
+
+
+
+
+
+  How do you test React Components with Jest?
+  ==========================================
+  * A React component represents a single unit of code built to accomplish a single task.
+  * Testing components ensures that they behave as expected.
+  * Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions.
+  * However, React components differe in a few ways:
+    * When A react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment.
+    * Since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI.
+  * React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
+
+  ---
+  Objectives -- 
+      * first test that ensures component renders to beging with (useful as a base to build on when your component heirarchy grows such as when a nested component breaks).
+         * Testing deeply nested components is refered to as a "smoke test".
+      * Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all.
+        * If you did not intend to change the UI
+        
+  
 
 </dd>
 </dl>
