@@ -6,7 +6,7 @@ Here are a few questions from the study to explore:
 
 * [What is testing?](#What-is-testing)
 * [What is Jest?](#What-is-Jest)
-* [](#)
+* [What should you consider before writing Jest tests?](#What-should-you-consider-before-writing-Jest-tests)
 * [](#)
 * [](#)
 * [](#)
