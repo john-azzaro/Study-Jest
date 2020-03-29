@@ -64,12 +64,12 @@ When two or more units are combined, they form an interface, and when two or mor
 <dd>
 
 ## Think about how the function/component should be tested.
-To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow. For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
+**To figure out how the function/component should be tested, you need to think about the specific rules the problem needs to follow.** For example, if the function were to test a fizz-buzz function,you could add tests for whether or not a given number is divisible by 3 is equal to "fizz", divisible by 5 is "buzz", etc. To verify that your rules are being followed, you would need to test the function over and over again to make sure that if a certain number appears, the result will be equal to your test results. 
 
 <br>
 
 ## Create a basic table of tests before you start coding.
-This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing. Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
+**This basic table of tests will have test inputs, expected outputs, and a description of what the test is performing.** Below you have a number of tests. Each test has an input, a desired output, and a description of what the test is for. In normal circumstances, it is good to test the normal use cases. But it also important to test edge cases and even cases that you know will break.
 
 | **Test**          |   **Input**      | **Output**      | **Description**         |
 | ------------------| -----------------------------------| ------------------| --------------------------|
@@ -103,15 +103,15 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <dd>
 
 ## Have a file to test.
-Your test file can be anything from a simple JavaScript function to a complex React component. In this case, we have a function ```isDivisible``` that tests to see if the input is divisible by 5. Note that if you are testing vanilla JavaScript, you still need to export that function so that it is accessible to Jest and other modules.
+**Your test file can be anything from a simple JavaScript function to a complex React component.** In this case, we have a function ```isDivisible``` that tests to see if the input is divisible by 5. Note that if you are testing vanilla JavaScript, you still need to export that function so that it is accessible to Jest and other modules.
 
 <br>
 
 ## Create a .test.js file.
-To create a test, you first need to create a ```.test.js``` file. Ideally, you want to keep your test file in the same location as the file you wish to test. When you run your test, Jest (which comes configured when you run ```create-react-app```) will automatically look for files with ".test.js" or ".spec.js" and run them.
+**To create a test, you first need to create a ```.test.js``` file.** Ideally, you want to keep your test file in the same location as the file you wish to test. When you run your test, Jest (which comes configured when you run ```create-react-app```) will automatically look for files with ".test.js" or ".spec.js" and run them.
 ```
-  src  >  myProgramFolder  >  index.test.js                      // uses "test".
-  src  >  myProgramFolder  >  index.spec.js                      // uses "spec".
+  src  >  myProgramFolder  >  index.test.js                                       // uses "test".
+  src  >  myProgramFolder  >  index.spec.js                                       // uses "spec".
 ```
 
 <br>
@@ -127,14 +127,14 @@ Before you write your tests, it's best practice to first create a test suite to 
 <br>
 
 ## Add a test function with expectations and matchers.
-The test functioninvokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output. First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
+The test function invokes the function to be tested with the input for for which you know the output and then compared the actual output to the expected output. First, you need to use ```it``` to invoke Jest. The "it" function takes TWO parameters... a description of the test and the function itself. The description should be clear and unambiguous as it will help describe and identify the test. In the body, you can write the test code, including expected inputs, expected outputs, and actual outputs. At the end of your test, you need to use "expect" which essentially says "when you run this code, expect X". In Jest, the "expect" function provides [Jest Matchers](https://jestjs.io/docs/en/using-matchers) like ".toBe" to check the input. If it matches, the test will pass. If it does not match, then the test will fail.
 ```JavaScript
   describe('Divisible by 5', function() {
-    it('Should NOT be possible to divide 24 by 5', function() {    // The "it" function takes two parameters, the description and the function.
-      const input = 24                                             // Tested input value (the inserted parameter for the test).
-      const expectedOutput = false;                                // The expected output from this test (in this case false).
-      const actualOutput = myFunction(input)                       // The actual output is the tested function wth the input passed to it.
-      expect(actualOutput).toBe(expectedOutput);                   // The result of myFunction(25) is expected to be FALSE.
+    it('Should NOT be possible to divide 24 by 5', function() {                   // The "it" function takes two parameters, the description and the function.
+      const input = 24                                                            // Tested input value (the inserted parameter for the test).
+      const expectedOutput = false;                                               // The expected output from this test (in this case false).
+      const actualOutput = myFunction(input)                                      // The actual output is the tested function wth the input passed to it.
+      expect(actualOutput).toBe(expectedOutput);                                  // The result of myFunction(25) is expected to be FALSE.
     });
   });
 ```
@@ -143,13 +143,13 @@ You can even have smaller individual test functions for each and every test if y
 ```JavaScript
   describe('Divisible by 5', function() {
     it('Should NOT be possible to divide 4 by 5', function() {     
-      expect(4).toBe(false);                                       // expect 4 to be false.
+      expect(4).toBe(false);                                                      // expect 4 to be false.
     });
     it('Should be possible to divide 5 by 5', function() {    
-      expect(5).toBe(true);                                        // expect 5 to be true.
+      expect(5).toBe(true);                                                       // expect 5 to be true.
     });
     it('Should Not be possible to divide 5 by 5', function() {     
-      expect(6).toBe(false);                                       // expect 6 to be false.
+      expect(6).toBe(false);                                                      // expect 6 to be false.
     });
   });
 ```
