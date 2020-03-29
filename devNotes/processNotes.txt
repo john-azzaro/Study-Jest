@@ -301,7 +301,7 @@ How do you create more than one test?
 
 
 
-  What is Snapshot testing
+  What is Snapshot testing?
   ========================
   * Another simple test is a snapshot test.
   * Snapshots are saved versions of the UI rendered by the React component.

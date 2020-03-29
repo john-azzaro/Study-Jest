@@ -7,7 +7,9 @@ Here are a few questions from the study to explore:
 * [What is testing?](#What-is-testing)
 * [What is Jest?](#What-is-Jest)
 * [What should you consider before writing Jest tests?](#What-should-you-consider-before-writing-Jest-tests)
-* [](#)
+* [How do you create a Jest test?](#How do you create a Jest test?)
+* [How do you create more than one Jest test?](#How do you create more than one Jest test?)
+* [How do you test React Components with Jest?](#How do you test React Components with Jest?)
 * [](#)
 * [](#)
 
@@ -133,6 +135,36 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <br>
 
 # How do you create a smoke test?
+
+<dl>
+<dd>
+
+
+
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# What is Snapshot testing?
+
+<dl>
+<dd>
+
+
+
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# How do you implement a test suite?
 
 <dl>
 <dd>
