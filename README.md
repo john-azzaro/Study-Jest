@@ -96,6 +96,21 @@ When you run ```create-react-app```, everything that you need to utilize Jest te
 <dl>
 <dd>
 
+## Create a .test.js file.
+To create a test, you first need to create a ```.test.js``` file. Ideally, you want to keep your test file in the same location as the file you wish to test. When you run your test, Jest (which comes configured when you run ```create-react-app```) will automatically look for files with ".test.js" or ".spec.js" and run them.
+```
+  src  >  myProgramFolder  >  index.test.js
+
+        --or--
+
+  src  >  myProgramFolder  >  index.spec.js
+```
+
+
+
+
+
+
 
 
 </dd>
