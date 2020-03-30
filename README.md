@@ -211,29 +211,11 @@ If the test passes (or you fix the issue that caused to test to fail), you will 
 
 ## 
 
+A React component represents a single unit of code built to accomplish a single task. Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions. However, React components differe in a few ways. For example, when a react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment. And since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI. React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
 
+## Testing components ensures that they behave as expected.
+First test that ensures component renders to beging with (useful as a base to build on when your component heirarchy grows such as when a nested component breaks). Testing deeply nested components is refered to as a "smoke test". Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all. If you did not intend to change the UI, you can address the code.
 
-
-
-
-  How do you test React Components with Jest?
-  ==========================================
-  * A React component represents a single unit of code built to accomplish a single task.
-  * Testing components ensures that they behave as expected.
-  * Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions.
-  * However, React components differe in a few ways:
-    * When A react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment.
-    * Since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI.
-  * React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
-
-  ---
-  Objectives -- 
-      * first test that ensures component renders to beging with (useful as a base to build on when your component heirarchy grows such as when a nested component breaks).
-         * Testing deeply nested components is refered to as a "smoke test".
-      * Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all.
-        * If you did not intend to change the UI
-        
-  
 
 </dd>
 </dl>
