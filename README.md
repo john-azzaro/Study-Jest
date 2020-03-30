@@ -225,11 +225,13 @@ First test that ensures component renders to beging with (useful as a base to bu
 <br>
 <br>
 
-# How do you create a smoke test?
+# What is a smoke test?
 
 <dl>
 <dd>
 
+## A smoke test tests primary functionality before further testing.
+A smoke test, sometimes called "build verifcation testing", verifies that the most important functionality is working. For example, a smoke test for a ecommerce application might involve signing in, adding something to a shopping cart, and checking out. Smoke tests are not intended to cover every permutation and edge case. Instead, they check that your application isnt broken so that additional testing isnt a waste of time
 
 
 </dd>
