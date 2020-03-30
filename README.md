@@ -288,7 +288,7 @@ Of course, you will need to import the ```react-test-renderer``` file to your te
 First, you need to call ```renderer``` and call the ```create``` method that takes the component to be rendered (e.g. ```Mycomponent```) and performs a render on it. Then, add the ```.toJSON``` method to creat a human-readable JSON file. Then when you expect what you made above, add the ```.toMatchSnapshot``` to perfom the snapshot comparison.
 ```JavaScript
     describe('Snapshot of MyComponent', function() {
-    it('Should match previous snapshot', function() {   
+    it('renders the UI as expected', function() {   
       const myVar = renderer.create(<MyComponent />).toJSON();
       expect(myVar).toMatchSnapshot();
     });
@@ -297,21 +297,31 @@ First, you need to call ```renderer``` and call the ```create``` method that tak
 
 <br>
 
-## 
+## Run the test to take a snapshot
+**When you run the test, it will either Pass or Fail and the snapshot will be saved to the snapshots file.** First, you will see whether or not the component passed the snapshot test. In the example below, you will see that the MyComponent passed the test. It also had 1 snapshot written from 1 test suite. And below, you will see the number of test suites and tests, as well as the number of snapshots taken.
+```
+  PASS src/MyComponent.test.js
+    √ renders the UI as expected (11ms)
 
+  › 1 snapshot written.              
+    Snapshot Summary
+  › 1 snapshot written from 1 test suite.       
 
+  Test Suites: 1 passed, 1 total
+  Tests:       1 passed, 1 total
+  Snapshots:   1 written, 1 total
+  Time:        2.682s
+  Ran all test suites related to changed files.
+```
 
+In addition to this test, you will see that when you first run your snapshot test, a folder will be created in the ```src``` folder called ```__snapshots__```. Inside this folder, you will see a new file called ```MyComonent.test.js.snap``` which is a snapshot of the component taken. Note that these snapshots should always be commmitted to your project repository so you and other developers can see for reference.
 
+<br>
 
-
-
+## Update a snpashot by pressing "u".
+Snapshots fail for two reasons: either you deliberately update the way a component renders or you unintentionally update the way a component renders. In both cases, the snapshot will fail.
+However, in the case of you deliberately updating a snapshot, you can update the snapshot to reflect the changed output from the component by pressing "u". In the case of the second, you need to revisit the code. 
 
 </dd>
 </dl>
-
-<br>
-<br>
-<br>
-<br>
-
 
