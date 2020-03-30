@@ -265,11 +265,37 @@ For example, a UI component is rendered, takes a snapshot, and then compares it 
 <dl>
 <dd>
 
-## 
+## Install the react-test-renderer package.
 Snapshots in Jest use another package named react-test-renderer to get a snapshot of the rendered output of the component which can then be saved to a file for future use. To begin snapshot testing, you first need to install the ```react-test-renderer``` package. Also note that you need to add the -D falg which tells npm to install as a development dependency which will NOT be bundled with production code.
 ```
   npm install react-test-renderer -D
 ```
+
+<br>
+
+## Import react-test-renderer to your test file.
+Of course, you will need to import the ```react-test-renderer``` file to your test file so that you can utilize it.
+```JavaScript
+  import renderer from 'react-test-renderer';
+```
+
+<br>
+
+## Create your test case with snapshot functionality
+Although you do not need to dedicate an entire test suite to testing a snapshot, in the example below, we'll test the ```MyComponent``` custom component.  First, you need to call ```renderer``` and call the ```create``` method that takes the component to be rendered (e.g. ```Mycomponent```) and performs a render on it. Then, add the ```.toJSON``` method to creat a human-readable JSON file. Then when you expect what you made above, add the ```.toMatchSnapshot``` to perfom the snapshot comparison.
+```JavaScript
+    describe('Snapshot of MyComponent', function() {
+    it('Should match previous snapshot', function() {   
+      const myVar = renderer.create(<MyComponent />).toJSON();
+      expect(myVar).toMatchSnapshot();
+    });
+  });
+```
+
+<br>
+
+## 
+
 
 
 
