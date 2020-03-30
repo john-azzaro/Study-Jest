@@ -209,9 +209,10 @@ If the test passes (or you fix the issue that caused to test to fail), you will 
 <dl>
 <dd>
 
-## 
+##  React testing tests exisiting UI
+**A React component represents a single unit of code built to accomplish a single task.** Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions. However, React components differe in a few ways. For example, when a react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment. And since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI. React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
 
-A React component represents a single unit of code built to accomplish a single task. Components are just like JavaScript code, so testing them is simply an extension of testing JavaScript functions. However, React components differe in a few ways. For example, when a react component is mounted on a browsers DOM when it is rendered so the component needs to be tested to work in that kind of environment. And since React is concerned with the "view" layer of the UI, you want to make sure no unexpected changes happen to the UI. React components can be simple or complex, so tests should cover every aspect of the components behavior including props, user events, and rendering.
+<br>
 
 ## Testing components ensures that they behave as expected.
 First test that ensures component renders to beging with (useful as a base to build on when your component heirarchy grows such as when a nested component breaks). Testing deeply nested components is refered to as a "smoke test". Second, "snapshot testing" compares the UI to a saved version  of the UI and informs you is the UI changed at all. If you did not intend to change the UI, you can address the code.
@@ -231,7 +232,7 @@ First test that ensures component renders to beging with (useful as a base to bu
 <dd>
 
 ## A smoke test tests primary functionality before further testing.
-A smoke test, sometimes called "build verifcation testing", verifies that the most important functionality is working. For example, a smoke test for a ecommerce application might involve signing in, adding something to a shopping cart, and checking out. Smoke tests are not intended to cover every permutation and edge case. Instead, they check that your application isnt broken so that additional testing isnt a waste of time
+**A smoke test, sometimes called "build verifcation testing", verifies that the most important functionality is working.** For example, a smoke test for a ecommerce application might involve signing in, adding something to a shopping cart, and checking out. Smoke tests are not intended to cover every permutation and edge case. Instead, they check that your application isnt broken so that additional testing isnt a waste of time
 
 
 </dd>
@@ -248,7 +249,7 @@ A smoke test, sometimes called "build verifcation testing", verifies that the mo
 <dd>
 
 ## Snapshots are saved versions of the UI rendered by the React component.
-Snapshots are a tool you can use when you want to make sure your UI does not chnage unexpectedly. Snapshots in Jest use another package named react-test-renderer to get a snapshot of the component which can then be saved to a file for future use.
+**Snapshots are a tool you can use when you want to make sure your UI does not chnage unexpectedly.** Snapshots in Jest use another package named react-test-renderer to get a snapshot of the component which can then be saved to a file for future use.
 
 For example, a UI component is rendered, takes a snapshot, and then compares it to a reference snapshot file stored alongside the test. The test will fail if the two snapshots do not match. When the test fails, either the change is unexpected or the reference snapshot needs to be updated to the new version of the UI component.
 
@@ -266,7 +267,7 @@ For example, a UI component is rendered, takes a snapshot, and then compares it 
 <dd>
 
 ## Install the react-test-renderer package.
-Snapshots in Jest use another package named react-test-renderer to get a snapshot of the rendered output of the component which can then be saved to a file for future use. To begin snapshot testing, you first need to install the ```react-test-renderer``` package. Also note that you need to add the -D falg which tells npm to install as a development dependency which will NOT be bundled with production code.
+**Snapshots in Jest use another package named react-test-renderer to get a snapshot of the rendered output of the component which can then be saved to a file for future use.** To begin snapshot testing, you first need to install the ```react-test-renderer``` package. Also note that you need to add the -D falg which tells npm to install as a development dependency which will NOT be bundled with production code.
 ```
   npm install react-test-renderer -D
 ```
@@ -282,7 +283,9 @@ Of course, you will need to import the ```react-test-renderer``` file to your te
 <br>
 
 ## Create your test case with snapshot functionality
-Although you do not need to dedicate an entire test suite to testing a snapshot, in the example below, we'll test the ```MyComponent``` custom component.  First, you need to call ```renderer``` and call the ```create``` method that takes the component to be rendered (e.g. ```Mycomponent```) and performs a render on it. Then, add the ```.toJSON``` method to creat a human-readable JSON file. Then when you expect what you made above, add the ```.toMatchSnapshot``` to perfom the snapshot comparison.
+**The test case will use the renderer method to create snapshot in JSON and then match the snapshot with an exisiting one.** Although you do not need to dedicate an entire test suite to testing a snapshot, in the example below, we'll test the ```MyComponent``` custom component.  
+
+First, you need to call ```renderer``` and call the ```create``` method that takes the component to be rendered (e.g. ```Mycomponent```) and performs a render on it. Then, add the ```.toJSON``` method to creat a human-readable JSON file. Then when you expect what you made above, add the ```.toMatchSnapshot``` to perfom the snapshot comparison.
 ```JavaScript
     describe('Snapshot of MyComponent', function() {
     it('Should match previous snapshot', function() {   
