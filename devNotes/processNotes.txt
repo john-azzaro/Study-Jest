@@ -554,3 +554,9 @@ And in the output you shoudl see something like this:
       Time:        2.07s
       Ran all test suites related to changed files.
   --------------------------------------------------------------------
+
+
+
+  Resources
+  =======================
+  https://www.freecodecamp.org/news/smoke-testing/#what-is-smoke-testing   -- smoke tests.
