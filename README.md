@@ -252,19 +252,26 @@ Snapshots are a tool you can use when you want to make sure your UI does not chn
 
 For example, a UI component is rendered, takes a snapshot, and then compares it to a reference snapshot file stored alongside the test. The test will fail if the two snapshots do not match. When the test fails, either the change is unexpected or the reference snapshot needs to be updated to the new version of the UI component.
 
+</dd>
+</dl>
+
+<br>
+<br>
+<br>
+<br>
+
+# How do you perfom snapshot testing?
+
+<dl>
+<dd>
+
+## 
+Snapshots in Jest use another package named react-test-renderer to get a snapshot of the rendered output of the component which can then be saved to a file for future use. To begin snapshot testing, you first need to install the ```react-test-renderer``` package. Also note that you need to add the -D falg which tells npm to install as a development dependency which will NOT be bundled with production code.
+```
+  npm install react-test-renderer -D
+```
 
 
-
-
-
-  How do you perform snapshot testing
-  ====================================
-  * Snapshots in Jest use another package named react-test-renderer to get a snapshot of the rendered output
-    of the component which can then be saved to a file for future use.
-  * Note that -D tells npm to install as a development dependency and they are NOT bundled with production code.
-    ----------------------------------------------
-      npm install react-test-renderer -D
-    ----------------------------------------------
 
 
 
